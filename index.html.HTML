@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitolyn - Unlock Your Metabolic Power</title>
+  <link rel="icon" type="image/png" href="https://mitolyn.com/assets/images/avif/product-home.avif">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .hero-heading {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero-heading h2 {
+      color: white;
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      font-weight: 800;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin: 0 0 15px 0;
+      line-height: 1.2;
+    }
+
+    .hero-subheading {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .product-card {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      color: white;
+      text-align: center;
+    }
+
+    .product-image-wrapper {
+      margin-bottom: 25px;
+    }
+
+    .product-image-wrapper img {
+      max-width: 100%;
+      height: auto;
+      max-height: 250px;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+    }
+
+    .product-card h3 {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .benefits-list {
+      list-style: none;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    .benefits-list li {
+      padding: 10px 0;
+      padding-left: 30px;
+      position: relative;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      line-height: 1.5;
+    }
+
+    .benefits-list li:before {
+      content: "⚡";
+      position: absolute;
+      left: 0;
+      color: #4ade80;
+      font-size: 1.2rem;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .subheadline {
+      color: #dc2626;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .form-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #1f2937;
+      margin-bottom: 10px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: #1f2937;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .form-header p {
+      color: #6b7280;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      line-height: 1.6;
+    }
+
+    .email-form {
+      margin-top: 25px;
+    }
+
+    .email-form input[type="email"] {
+      width: 100%;
+      padding: 16px 18px;
+      font-size: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: all 0.3s;
+    }
+
+    .email-form input[type="email"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .email-form button {
+      width: 100%;
+      padding: 16px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    }
+
+    .email-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.4);
+    }
+
+    .email-form button:active {
+      transform: translateY(0);
+    }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    .guarantee-badge {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0fdf4;
+      border: 2px solid #4ade80;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .guarantee-badge strong {
+      color: #059669;
+      font-size: 1rem;
+    }
+
+    .guarantee-badge small {
+      font-size: 0.85rem;
+    }
+
+    .video-section {
+      padding: 60px 20px;
+      background: white;
+    }
+
+    .video-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .video-container h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 30px;
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .science-section {
+      padding: 60px 20px;
+      background: #f9fafb;
+    }
+
+    .science-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .science-badge {
+      display: inline-block;
+      background: #dc2626;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .science-content h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      color: #1f2937;
+      margin-bottom: 25px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .science-content p {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: #4b5563;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 25px 0;
+    }
+
+    .features-section {
+      padding: 60px 20px;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      margin-bottom: 40px;
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: #f9fafb;
+      text-align: center;
+      padding: 35px 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+    }
+
+    .feature-card h3 {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+
+    .feature-card p {
+      color: #6b7280;
+      line-height: 1.7;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .testimonials-section {
+      padding: 60px 20px;
+      background: #f9fafb;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #4b5563;
+      margin-bottom: 18px;
+      line-height: 1.7;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 0.9rem;
+    }
+
+    .research-section {
+      padding: 60px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .research-section h3 {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: #1f2937;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .logos-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .logos-container img {
+      max-height: 45px;
+      width: auto;
+      opacity: 0.75;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .logos-container img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #1f2937;
+      color: #9ca3af;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #374151;
+      border-radius: 10px;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 968px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .product-card {
+        order: 2;
+      }
+
+      .form-card {
+        order: 1;
+      }
+
+      .hero-section {
+        padding: 25px 15px;
+      }
+
+      .product-card,
+      .form-card {
+        padding: 30px 25px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-section {
+        padding: 20px 12px;
+        min-height: auto;
+      }
+
+      .product-card,
+      .form-card {
+        padding: 25px 20px;
+      }
+
+      .benefits-list li {
+        padding-left: 28px;
+        font-size: 0.9rem;
+      }
+
+      .email-form input[type="email"],
+      .email-form button {
+        padding: 14px 16px;
+      }
+
+      .guarantee-badge {
+        padding: 12px;
+      }
+
+      .video-section,
+      .testimonials-section,
+      .features-section {
+        padding: 40px 15px;
+      }
+
+      .logos-container {
+        gap: 30px;
+      }
+
+      .logos-container img {
+        max-height: 35px;
+      }
+
+      .testimonial-card {
+        padding: 25px 20px;
+      }
+
+      .feature-card {
+        padding: 30px 20px;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-heading h2 {
+        font-size: 1.5rem;
+      }
+
+      .form-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .product-image-wrapper img {
+        max-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-heading">
+      <h2>Discover The Secret To Rapid Weight Loss</h2>
+    </div>
+    <div class="hero-container">
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="https://mitolyn.com/assets/images/avif/product-home.avif" alt="Mitolyn Weight Loss Support">
+        </div>
+        <h3>You will discover...</h3>
+        <ul class="benefits-list">
+          <li>The shocking new cause of slow metabolism discovered by Harvard scientists</li>
+          <li>How to support healthy mitochondria levels naturally</li>
+          <li>Why your body burns fat 24/7—even while sleeping</li>
+          <li>The 6 exotic nutrients that promote calorie-burning</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <div class="form-header">
+          <p class="subheadline"></p>
+          <h1>Burn Stubborn Fat 100X Faster</h1>
+          <p class="subtitle">"With This Simple <span style="text-decoration: underline;">Natural Formula</span>"</p>
+          <p style="margin-top: 15px;">Harvard scientists link slow metabolism to low mitochondria. Boost mitochondrial health to burn more calories naturally—even in your sleep.</p>
+        </div>
+
+        <div class="email-form">
+          <form id="emailForm">
+            <input type="email" name="email" required placeholder="Enter your email address">
+            <button type="submit">🎯 Yes, Show Me The Secret</button>
+          </form>
+          <p class="form-note">Join thousands who've transformed their bodies</p>
+        </div>
+
+        <div class="guarantee-badge">
+          <strong>✓ 90-Day Money Back Guarantee</strong><br>
+          <small>100% Satisfaction or Your Money Back</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <div class="video-container">
+      <h2>Watch How It Works</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/Mh-9srK5w54?autoplay=1&mute=1&modestbranding=1&showinfo=0&rel=0&controls=1" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I've tried everything, but this is the only product that actually worked for me. I feel amazing and the weight just melted off!"</p>
+        <p class="testimonial-author">Peggy B. - Rexton, MI</p>
+        <small style="color: #9ca3af;">Purchased 6 Bottles Package</small>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"My energy levels have skyrocketed! I'm no longer crashing in the afternoon and I'm finally seeing the results I've been working toward."</p>
+        <p class="testimonial-author">Russell L. - Macon, GA</p>
+        <small style="color: #9ca3af;">Purchased 3 Bottles Package</small>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"This changed my life. Not only did I lose weight, but I feel healthier and more confident than ever before. Highly recommend!"</p>
+        <p class="testimonial-author">Connie A. - Montclair, NJ</p>
+        <small style="color: #9ca3af;">Purchased 6 Bottles Package</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="disclaimer">
+        <strong>Affiliate Disclosure:</strong> This website contains affiliate links. If you click on these links and make a purchase, we may earn a commission at no additional cost to you.
+      </div>
+      <p class="copyright">&copy; 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.querySelector('input[name="email"]').value;
+
+      fetch("https://script.google.com/macros/s/AKfycbxmwHfAaLwomrYPIYq3wj6QREd_QczovINXN0Fo7p5ogvN_f6mf3HxcDFegB_bO64Eu/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      });
+
+      window.location.href = "https://05b0c4ql2hqd2culng251m5k68.hop.clickbank.net";
+    });
+  </script>
+</body>
+</html>
